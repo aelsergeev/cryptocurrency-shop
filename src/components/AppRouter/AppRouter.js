@@ -1,19 +1,18 @@
 import React, { PureComponent } from 'react';
 import './AppRouter.css';
-import { Route, Switch } from 'react-router-dom';
+import { Switch } from "react-router-dom";
 import PrivateRoute from '../PrivateRoute';
+import Wallet from "../Wallet";
 
 export default class AppRouter extends PureComponent {
   render() {
     return (
       <main>
         <Switch>
-          <PrivateRoute path="/" component={Welcome} exact />
-          <Route path="/profile" component={Welcome} />
+          <PrivateRoute path="/" to="/trade" component={Wallet} exact />
+          {/*<PrivateRoute path="/trade" component={Wallet} />*/}
         </Switch>
       </main>
     );
   }
 }
-
-const Welcome = () => <h1>Hello world!</h1>;
