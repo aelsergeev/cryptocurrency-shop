@@ -1,0 +1,27 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    min-height: calc(100% - 80px);
+    background-color: #F2F3F5;
+}
+
+.main:after {
+    content: '';
+    display: block;
+    height: 100px;
+}
+
+.main-div {
+    width: 1200px;
+    padding-top: 10px;
+}
+
+.main-article {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}

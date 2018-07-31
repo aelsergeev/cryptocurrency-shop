@@ -4,22 +4,28 @@ import './PrivateRoute.css';
 import Auth from "../Auth";
 import Particles from "react-particles-js";
 import particlesParams from "../../particles-params";
+import Header from "../Header";
+import Section from "../Section";
 
 export default class PrivateRoute extends PureComponent {
   render() {
-    const { isAuthorized, component: Component, to, ...rest } = this.props;
+    const { isAuthorized, component: Component, ...rest } = this.props;
 
     return (
       <Route
         {...rest}
         render={() =>
           isAuthorized ? (
-            <Component params={rest.computedMatch.params} />
-          ) : (
             <Fragment>
-              <Auth/>
-              <Particles params={particlesParams} />
+              <Header />
+              <Component params={rest.computedMatch.params} />
+              <Section />
             </Fragment>
+          ) : (
+            <main>
+              <Auth />
+              <Particles params={particlesParams} />
+            </main>
           )
         }
       />
