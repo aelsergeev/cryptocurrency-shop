@@ -44,12 +44,12 @@ export default handleActions(
     [fetchBtcSuccess.toString()]: (state, action) => ({
       ...state,
       isBtcLoading: false,
-      btc: [...state.btc, ...action.payload]
+      btc: action.payload
     }),
     [fetchEthSuccess.toString()]: (state, action) => ({
       ...state,
       isEthLoading: false,
-      eth: [...state.eth, ...action.payload]
+      eth: action.payload
     }),
     [fetchBtcFailure.toString()]: state => ({ ...state, isBtcLoading: false }),
     [fetchEthFailure.toString()]: state => ({ ...state, isEthLoading: false }),

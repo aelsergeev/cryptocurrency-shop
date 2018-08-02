@@ -21,7 +21,6 @@ export function* registrationFlow() {
       yield call(setTokenApi, token);
       yield put(registrationSuccess());
     } catch (e) {
-      console.log(e);
       yield put(registrationFailure(e));
     }
   });
@@ -50,9 +49,6 @@ export function* authFlow() {
       yield call(setTokenApi, localStorageToken);
       yield put(loginSuccess());
     }
-
-    yield call(setTokenApi, localStorageToken);
-    yield call(setTokenToLocalStorage, localStorageToken);
 
     yield take(logout);
 

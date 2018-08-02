@@ -1,0 +1,35 @@
+.graph-div {
+    border: 1px solid #edf0f1;
+    height: 448px;
+    margin-top: 15px;
+    border-radius: 3px;
+}
+
+.graph-buttons {
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    background-color: #edf0f1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.graph-button {
+    margin: 0 4px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #9998A1;
+    padding: 2px 16px;
+}
+
+.graph-button-selected {
+    margin: 0 4px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #6AB4DD;
+    color: white;
+    padding: 2px 16px;
+}

@@ -1,7 +1,16 @@
 import { fetchWalletRequest, fetchWalletSuccess, fetchWalletFailure } from '../modules/wallet';
-import { sellCurrencyFailure, sellCurrencySuccess, sellCurrencyRequest, buyCurrencyFailure, buyCurrencySuccess, buyCurrencyRequest, getSelectedCurrency } from '../modules/currency';
+import {
+  sellCurrencyFailure,
+  sellCurrencySuccess,
+  sellCurrencyRequest,
+  buyCurrencyFailure,
+  buyCurrencySuccess,
+  buyCurrencyRequest,
+  getSelectedCurrency
+} from '../modules/currency';
 import { getWallet, sellCurrency, buyCurrency } from '../api';
-import { call, select, put, takeLatest } from "redux-saga/effects";
+import { call, select, put, takeLatest, take } from 'redux-saga/effects';
+import { loginSuccess, registrationSuccess } from '../modules/auth';
 
 function* fetchWalletFlow() {
   try {
@@ -33,13 +42,22 @@ function* sellCurrencyFlow(action) {
 }
 
 export function* fetchWalletWatch() {
-  yield takeLatest(fetchWalletRequest, fetchWalletFlow)
+  yield takeLatest(fetchWalletRequest, fetchWalletFlow);
 }
 
 export function* buyCurrencyWatch() {
-  yield takeLatest(buyCurrencyRequest, buyCurrencyFlow)
+  yield takeLatest(buyCurrencyRequest, buyCurrencyFlow);
 }
 
 export function* sellCurrencyWatch() {
-  yield takeLatest(sellCurrencyRequest, sellCurrencyFlow)
+  yield takeLatest(sellCurrencyRequest, sellCurrencyFlow);
+}
+
+export function* walletWatch() {
+  while (true) {
+    const action = yield take([loginSuccess, registrationSuccess]);
+
+    if (action.type === loginSuccess.toString() || action.type === registrationSuccess.toString())
+      yield put(fetchWalletRequest());
+  }
 }

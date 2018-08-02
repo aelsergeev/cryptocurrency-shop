@@ -1,22 +1,62 @@
-import React, { PureComponent } from "react";
-import "./Header.css"
-import logo from "./image/Logo-white.svg"
+import React, { PureComponent } from 'react';
+import './Header.css';
+import logo from './image/Logo-white.svg';
+import HeaderButton from '../HeaderButton/HeaderButton';
 
 export default class Header extends PureComponent {
+  componentDidMount() {
+    this.handleChooseCurrency(this.props.selected);
+  }
+
   render() {
-    const { coins, ethPrize, btcPrize } = this.props;
+    const { email, coins, ethPrice, btcPrice, selected } = this.props;
+    const buttons = [
+      {
+        name: 'btc',
+        price: btcPrice,
+        count: coins.btc
+      },
+      {
+        name: 'eth',
+        price: ethPrice,
+        count: coins.eth
+      }
+    ];
 
     return (
       <header className="header">
         <div className="header-div">
           <img className="header-image" src={logo} alt="Logo" />
           <div className="header-buttons">
-            <div className="header-button">{ethPrize && ethPrize.toFixed(1)}<b>{coins.btc} BTC</b></div>
-            <div className="header-button">{btcPrize && btcPrize.toFixed(1)}<b>{coins.eth} ETH</b></div>
+            {buttons.map(button => (
+              <HeaderButton
+                key={button.name}
+                name={button.name}
+                price={button.price}
+                count={button.count}
+                onChooseCurrency={this.handleChooseCurrency}
+                disabled={selected === button.name}
+              />
+            ))}
           </div>
-          <span>username</span>
+          <span>{email}</span>
         </div>
       </header>
     );
   }
+
+  handleChooseCurrency = selected => {
+    const { selectBtc, selectEth } = this.props;
+
+    switch (selected) {
+      case 'btc':
+        selectBtc();
+        return;
+      case 'eth':
+        selectEth();
+        return;
+      default:
+        return;
+    }
+  };
 }

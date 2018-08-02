@@ -5,6 +5,7 @@
     align-items: center;
     min-height: calc(100% - 80px);
     background-color: #F2F3F5;
+    margin-bottom: -100px;
 }
 
 .main:after {

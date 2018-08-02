@@ -12,9 +12,9 @@ export const {
 
 export default handleActions(
   {
-    [getUserInfoRequest.toString()]: state => {},
-    [getUserInfoSuccess.toString()]: state => {},
-    [getUserInfoFailure.toString()]: state => {},
+    [getUserInfoRequest.toString()]: state => ({ ...state, isLoading: true }),
+    [getUserInfoSuccess.toString()]: (state, action) => ({ ...state, info: action.payload, isLoading: false }),
+    [getUserInfoFailure.toString()]: (state, action) => ({ ...state, error: action.error, isLoading: false }),
   },
   {
     info: null,

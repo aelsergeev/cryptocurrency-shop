@@ -43,6 +43,14 @@ function* loginCurrencyFlow() {
   }
 }
 
+export function* fetchBtcWatch() {
+  yield takeLatest(fetchBtcRequest, fetchBtcFlow);
+}
+
+export function* fetchEthWatch() {
+  yield takeLatest(fetchEthRequest, fetchEthFlow);
+}
+
 export function* currencyWatch() {
   let currencyTask;
   while (true) {
@@ -54,12 +62,4 @@ export function* currencyWatch() {
     }
     if (action.type !== logout.toString()) currencyTask = yield fork(loginCurrencyFlow);
   }
-}
-
-export function* fetchBtcWatch() {
-  yield takeLatest(fetchBtcRequest, fetchBtcFlow);
-}
-
-export function* fetchEthWatch() {
-  yield takeLatest(fetchEthRequest, fetchEthFlow);
 }

@@ -3,10 +3,6 @@ import './Wallet.css';
 import TradeOperations from "../TradeOperations/TradeOperations";
 
 export default class Wallet extends PureComponent {
-  componentDidMount() {
-    this.props.fetchWalletRequest();
-  }
-
   render() {
     const { wallet: { coins } } = this.props;
 
