@@ -8,12 +8,12 @@ export default {
       }
     },
     color: {
-      value: '#ff0000'
+      value: '#00c3ff'
     },
     shape: {
-      type: 'star',
+      type: 'circle',
       stroke: {
-        width: 4,
+        width: 5,
         color: '#000000'
       },
       polygon: {
@@ -26,7 +26,7 @@ export default {
       }
     },
     opacity: {
-      value: 0.8,
+      value: 0.3,
       random: false,
       anim: {
         enable: false,
@@ -36,7 +36,7 @@ export default {
       }
     },
     size: {
-      value: 4,
+      value: 6,
       random: true,
       anim: {
         enable: false,
@@ -47,8 +47,8 @@ export default {
     },
     line_linked: {
       enable: true,
-      distance: 100,
-      color: '#00c2ff',
+      distance: 200,
+      color: '#009eff',
       opacity: 0.4,
       width: 1
     },
