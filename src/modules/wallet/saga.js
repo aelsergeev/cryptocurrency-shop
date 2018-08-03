@@ -1,16 +1,16 @@
-import { fetchWalletRequest, fetchWalletSuccess, fetchWalletFailure } from '../modules/wallet';
+import { fetchWalletRequest, fetchWalletSuccess, fetchWalletFailure } from './actions';
 import {
   sellCurrencyFailure,
   sellCurrencySuccess,
   sellCurrencyRequest,
   buyCurrencyFailure,
   buyCurrencySuccess,
-  buyCurrencyRequest,
-  getSelectedCurrency
-} from '../modules/currency';
-import { getWallet, sellCurrency, buyCurrency } from '../api';
+  buyCurrencyRequest
+} from '../currency/actions';
+import { getWallet, sellCurrency, buyCurrency } from '../../api';
 import { call, select, put, takeLatest, take } from 'redux-saga/effects';
-import { loginSuccess, registrationSuccess } from '../modules/auth';
+import { loginSuccess, registrationSuccess } from '../auth/actions';
+import { getSelectedCurrency } from '../currency/selector';
 
 function* fetchWalletFlow() {
   try {

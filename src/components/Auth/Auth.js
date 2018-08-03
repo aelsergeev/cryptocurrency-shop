@@ -5,13 +5,13 @@ import { Redirect } from "react-router-dom";
 
 const authField = {
   false: {
-    a: 'Войти',
-    p: 'Впервые на сайте?',
+    link: 'Войти',
+    label: 'Впервые на сайте?',
     button: 'Зарегистрироваться'
   },
   true: {
-    a: 'Зарегистрироваться',
-    p: 'Уже зарегистрированы?',
+    link: 'Зарегистрироваться',
+    label: 'Уже зарегистрированы?',
     button: 'Войти'
   }
 };
@@ -27,7 +27,7 @@ export default class Auth extends PureComponent {
   render() {
     const { loginError, registrationError, isAuthorized } = this.props;
     const { auth, email, password } = this.state;
-    const { a, p, button } = authField[auth];
+    const { link, label, button } = authField[auth];
     const error = auth ? loginError : registrationError;
 
     if (isAuthorized) {
@@ -70,9 +70,9 @@ export default class Auth extends PureComponent {
           </div>
           <div className="change">
             <p>
-              {p}{' '}
+              {label}{' '}
               <a href="" onClick={this.handleChangeForm}>
-                {a}
+                {link}
               </a>
             </p>
           </div>

@@ -1,7 +1,7 @@
 import { takeLatest, fork, take, select, put, cancel, call } from 'redux-saga/effects';
 import { delay } from 'redux-saga';
-import { loginSuccess, logout } from '../modules/auth';
-import { getOffset } from '../modules/currency';
+import { loginSuccess, logout } from '../auth/actions';
+import { getOffset } from './selector';
 import {
   selectBtc,
   selectEth,
@@ -12,8 +12,8 @@ import {
   fetchEthFailure,
   fetchEthSuccess,
   selectOffset
-} from '../modules/currency';
-import { candles } from '../api';
+} from './actions';
+import { candles } from '../../api';
 
 function* fetchBtcFlow(action) {
   try {

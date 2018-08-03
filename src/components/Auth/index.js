@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Auth from './Auth';
-import { registrationRequest, loginRequest } from '../../modules/auth';
+import { registrationRequest, loginRequest } from '../../modules/auth/actions';
 import Particles from 'react-particles-js';
 import particlesParams from '../../particles-params';
 import React from 'react';

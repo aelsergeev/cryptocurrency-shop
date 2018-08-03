@@ -1,22 +1,14 @@
-import { createActions, handleActions } from 'redux-actions';
-
-export const {
+import { handleActions } from 'redux-actions';
+import { errorParser } from './selector';
+import {
+  loginFailure,
   loginRequest,
   loginSuccess,
-  loginFailure,
-  registrationRequest,
-  registrationSuccess,
+  logout,
   registrationFailure,
-  logout
-} = createActions(
-  'LOGIN_REQUEST',
-  'LOGIN_SUCCESS',
-  'LOGIN_FAILURE',
-  'REGISTRATION_REQUEST',
-  'REGISTRATION_SUCCESS',
-  'REGISTRATION_FAILURE',
-  'LOGOUT'
-);
+  registrationRequest,
+  registrationSuccess
+} from './actions';
 
 export default handleActions(
   {
@@ -45,11 +37,3 @@ export default handleActions(
   },
   { isAuthorized: false, loginError: null, registrationError: null }
 );
-
-export const errorParser = message => {
-  if (message.password && message.email) return `password: ${message.password},\n email: ${message.email}`;
-  else if (message.password) return `password: ${message.password}`;
-  else if (message.email) return `email: ${message.email}`;
-  else return message;
-};
-export const getIsAuthorized = state => state.auth.isAuthorized;

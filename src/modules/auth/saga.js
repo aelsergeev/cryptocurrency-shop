@@ -1,5 +1,5 @@
 import { take, put, call, select, takeEvery } from 'redux-saga/effects';
-import { setTokenApi, clearTokenApi, registration, login } from '../api';
+import { setTokenApi, clearTokenApi, registration, login } from '../../api';
 import {
   loginRequest,
   loginSuccess,
@@ -7,10 +7,10 @@ import {
   registrationFailure,
   registrationSuccess,
   registrationRequest,
-  logout,
-  getIsAuthorized
-} from '../modules/auth';
-import { getTokenFromLocalStorage, setTokenToLocalStorage, removeTokenFromLocalStorage } from '../localStorage';
+  logout
+} from './actions';
+import { getTokenFromLocalStorage, setTokenToLocalStorage, removeTokenFromLocalStorage } from '../../localStorage';
+import { getIsAuthorized } from './selector';
 
 export function* registrationFlow() {
   yield takeEvery(registrationRequest, function*(action) {

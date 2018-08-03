@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Header from './Header';
-import { selectBtc, selectEth } from "../../modules/currency";
+import { selectBtc, selectEth } from "../../modules/currency/actions";
 
 const mapStateToProps = state => ({
   ethPrice: state.currency.eth[0] && state.currency.eth[0].sell,

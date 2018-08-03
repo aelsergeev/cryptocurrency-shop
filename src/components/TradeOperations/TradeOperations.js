@@ -2,10 +2,10 @@ import React, { PureComponent } from 'react';
 import { compose, mapProps } from 'recompose';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getCurrentCurrencyPurchase, getCurrentCurrencySell, getSelectedCurrency } from '../../modules/currency';
-import { buyCurrencyRequest, sellCurrencyRequest } from '../../modules/currency';
+import { getCurrentCurrencyPurchase, getCurrentCurrencySell, getSelectedCurrency } from '../../modules/currency/selector';
+import { buyCurrencyRequest, sellCurrencyRequest } from '../../modules/currency/actions';
 import styled from 'styled-components';
-import { getError } from '../../modules/wallet';
+import { getError } from '../../modules/wallet/selector';
 
 const enhance = compose(
   withRouter,

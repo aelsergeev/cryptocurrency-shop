@@ -1,12 +1,8 @@
 import { call, put, take, takeLatest } from 'redux-saga/effects';
-import {
-  fetchUserTransactionsRequest,
-  fetchUserTransactionsFailure,
-  fetchUserTransactionsSuccess
-} from '../modules/transactions';
-import { getUserTransactions } from '../api';
-import { loginSuccess, registrationSuccess } from '../modules/auth';
-import { buyCurrencySuccess, sellCurrencyRequest } from '../modules/currency';
+import { fetchUserTransactionsRequest, fetchUserTransactionsFailure, fetchUserTransactionsSuccess } from './actions';
+import { getUserTransactions } from '../../api';
+import { loginSuccess, registrationSuccess } from '../auth/actions';
+import { buyCurrencySuccess, sellCurrencyRequest } from '../currency/actions';
 
 function* fetchTransactionsFlow() {
   try {

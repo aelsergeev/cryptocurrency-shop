@@ -1,7 +1,7 @@
 import { call, put, take, takeLatest } from 'redux-saga/effects';
-import { getUserInfoFailure, getUserInfoSuccess, getUserInfoRequest } from '../modules/user';
-import { getUserInfo } from '../api';
-import { loginSuccess, registrationSuccess } from '../modules/auth';
+import { getUserInfoFailure, getUserInfoSuccess, getUserInfoRequest } from './actions';
+import { getUserInfo } from '../../api';
+import { loginSuccess, registrationSuccess } from '../auth/actions';
 
 function* fetchUserFlow() {
   try {

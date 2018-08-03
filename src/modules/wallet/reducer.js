@@ -1,4 +1,4 @@
-import { createActions, handleActions } from 'redux-actions';
+import { handleActions } from 'redux-actions';
 import {
   buyCurrencyRequest,
   buyCurrencySuccess,
@@ -6,26 +6,21 @@ import {
   sellCurrencyRequest,
   sellCurrencySuccess,
   sellCurrencyFailure
-} from './currency';
-
-export const { fetchWalletRequest, fetchWalletSuccess, fetchWalletFailure } = createActions(
-  'FETCH_WALLET_REQUEST',
-  'FETCH_WALLET_SUCCESS',
-  'FETCH_WALLET_FAILURE'
-);
+} from '../currency/actions';
+import { fetchWalletFailure, fetchWalletRequest, fetchWalletSuccess } from './actions';
 
 export default handleActions(
   {
     [fetchWalletRequest.toString()]: state => ({ ...state, isLoading: true }),
     [fetchWalletSuccess.toString()]: (state, action) => ({ ...state, isLoading: false, coins: action.payload }),
     [fetchWalletFailure.toString()]: (state, action) => ({ ...state, isLoading: false, error: action.error }),
-    [buyCurrencyRequest.toString()]: (state) => ({ ...state }),
+    [buyCurrencyRequest.toString()]: state => ({ ...state }),
     [buyCurrencySuccess.toString()]: (state, { payload }) => ({
       ...state,
       coins: { usd: payload.usd, btc: payload.btc, eth: payload.eth }
     }),
     [buyCurrencyFailure.toString()]: (state, action) => ({ ...state, error: action.payload }),
-    [sellCurrencyRequest.toString()]: (state) => ({ ...state }),
+    [sellCurrencyRequest.toString()]: state => ({ ...state }),
     [sellCurrencySuccess.toString()]: (state, { payload }) => ({
       ...state,
       coins: { usd: payload.usd, btc: payload.btc, eth: payload.eth }
@@ -42,5 +37,3 @@ export default handleActions(
     error: null
   }
 );
-
-export const getError = state => state.wallet.error;
