@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import PrivateRoute from './PrivateRoute';
+import { getIsAuthorized } from '../../modules/auth/selector';
 
-const mapStateToProps = state => ({ isAuthorized: state.auth.isAuthorized });
+const mapStateToProps = state => ({ isAuthorized: getIsAuthorized(state) });
 
 const mapDispatchToProps = {};
 

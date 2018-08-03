@@ -1,12 +1,15 @@
 import { connect } from 'react-redux';
 import Header from './Header';
 import { selectBtc, selectEth } from "../../modules/currency/actions";
+import { getBtcPrice, getEthPrice } from "../../modules/currency/selector";
+import { getEmail } from "../../modules/user/selector";
+import { getCoins } from "../../modules/wallet/selector";
 
 const mapStateToProps = state => ({
-  ethPrice: state.currency.eth[0] && state.currency.eth[0].sell,
-  btcPrice: state.currency.btc[0] && state.currency.btc[0].sell,
-  email: state.user.info && state.user.info.email,
-  coins: state.wallet.coins,
+  ethPrice: getEthPrice(state),
+  btcPrice: getBtcPrice(state),
+  email: getEmail(state),
+  coins: getCoins(state),
 });
 
 const mapDispatchToProps = {

@@ -5,3 +5,5 @@ export const errorParser = message => {
   else return message;
 };
 export const getIsAuthorized = state => state.auth.isAuthorized;
+export const getLogginError = state => state.auth.isAuthorized;
+export const getRegistrationError = state => state.auth.isAuthorized;

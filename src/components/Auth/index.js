@@ -4,11 +4,12 @@ import { registrationRequest, loginRequest } from '../../modules/auth/actions';
 import Particles from 'react-particles-js';
 import particlesParams from '../../particles-params';
 import React from 'react';
+import { getIsAuthorized, getLogginError, getRegistrationError } from "../../modules/auth/selector";
 
 const mapStateToProps = state => ({
-  isAuthorized: state.auth.isAuthorized,
-  loginError: state.auth.loginError,
-  registrationError: state.auth.registrationError
+  isAuthorized: getIsAuthorized(state),
+  loginError: getLogginError(state),
+  registrationError: getRegistrationError(state)
 });
 
 const mapDispatchToProps = {

@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import Transactions from './Transactions';
+import { getSelectedCurrency } from '../../modules/currency/selector';
 
 const mapStateToProps = state => ({
   transactions: state.transactions,
-  selected: state.currency.selected
+  selected: getSelectedCurrency(state)
 });
 
 const mapDispatchToProps = {};
