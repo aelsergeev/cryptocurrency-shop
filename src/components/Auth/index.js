@@ -26,7 +26,7 @@ export default () => {
   return (
     <main>
       <AuthConnect />
-      <Particles params={particlesParams} />
+      <Particles params={particlesParams} style={{position: 'absolute', background: '#000000'}}/>
     </main>
   );
 };

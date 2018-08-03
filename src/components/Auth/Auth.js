@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import './Auth.css';
-import logo from './image/Logo.svg';
+import logo from './image/Logo-white.svg';
 import { Redirect } from 'react-router-dom';
 
 const authField = {
