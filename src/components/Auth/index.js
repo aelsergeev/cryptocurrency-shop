@@ -4,7 +4,7 @@ import { registrationRequest, loginRequest } from '../../modules/auth/actions';
 import Particles from 'react-particles-js';
 import particlesParams from '../../particles-params';
 import React from 'react';
-import { getIsAuthorized, getLogginError, getRegistrationError } from "../../modules/auth/selector";
+import { getIsAuthorized, getLogginError, getRegistrationError } from '../../modules/auth/selector';
 
 const mapStateToProps = state => ({
   isAuthorized: getIsAuthorized(state),
@@ -29,4 +29,4 @@ export default () => {
       <Particles params={particlesParams} />
     </main>
   );
-}
+};

@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import Graph from './Graph';
-import { selectOffset } from "../../modules/currency/actions";
+import { selectOffset } from '../../modules/currency/actions';
 
 const mapStateToProps = state => ({
-  currency: state.currency,
+  currency: state.currency
 });
 
 const mapDispatchToProps = {

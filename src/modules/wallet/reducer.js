@@ -11,16 +11,20 @@ import { fetchWalletFailure, fetchWalletRequest, fetchWalletSuccess } from './ac
 
 export default handleActions(
   {
-    [fetchWalletRequest.toString()]: state => ({ ...state, isLoading: true }),
-    [fetchWalletSuccess.toString()]: (state, action) => ({ ...state, isLoading: false, coins: action.payload }),
+    [fetchWalletRequest.toString()]: state => ({ ...state, isLoading: true, error: null }),
+    [fetchWalletSuccess.toString()]: (state, action) => ({
+      ...state,
+      isLoading: false,
+      coins: action.payload
+    }),
     [fetchWalletFailure.toString()]: (state, action) => ({ ...state, isLoading: false, error: action.error }),
-    [buyCurrencyRequest.toString()]: state => ({ ...state }),
+    [buyCurrencyRequest.toString()]: state => ({ ...state, error: null }),
     [buyCurrencySuccess.toString()]: (state, { payload }) => ({
       ...state,
       coins: { usd: payload.usd, btc: payload.btc, eth: payload.eth }
     }),
     [buyCurrencyFailure.toString()]: (state, action) => ({ ...state, error: action.payload }),
-    [sellCurrencyRequest.toString()]: state => ({ ...state }),
+    [sellCurrencyRequest.toString()]: state => ({ ...state, error: null }),
     [sellCurrencySuccess.toString()]: (state, { payload }) => ({
       ...state,
       coins: { usd: payload.usd, btc: payload.btc, eth: payload.eth }

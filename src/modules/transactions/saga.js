@@ -2,7 +2,7 @@ import { call, put, take, takeLatest } from 'redux-saga/effects';
 import { fetchUserTransactionsRequest, fetchUserTransactionsFailure, fetchUserTransactionsSuccess } from './actions';
 import { getUserTransactions } from '../../api';
 import { loginSuccess, registrationSuccess } from '../auth/actions';
-import { buyCurrencySuccess, sellCurrencyRequest } from '../currency/actions';
+import { buyCurrencySuccess, sellCurrencySuccess } from '../currency/actions';
 
 function* fetchTransactionsFlow() {
   try {
@@ -16,7 +16,7 @@ function* fetchTransactionsFlow() {
 export function* fetchTransactionsWatch() {
   yield takeLatest(fetchUserTransactionsRequest, fetchTransactionsFlow);
   yield takeLatest(buyCurrencySuccess, fetchTransactionsFlow);
-  yield takeLatest(sellCurrencyRequest, fetchTransactionsFlow);
+  yield takeLatest(sellCurrencySuccess, fetchTransactionsFlow);
 }
 
 export function* transactionsWatch() {

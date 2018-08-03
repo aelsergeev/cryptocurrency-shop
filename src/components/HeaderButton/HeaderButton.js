@@ -1,6 +1,6 @@
-import React, { PureComponent } from "react";
-import './HeaderButton.css'
-import { Link } from "react-router-dom";
+import React, { PureComponent } from 'react';
+import './HeaderButton.css';
+import { Link } from 'react-router-dom';
 
 class HeaderButton extends PureComponent {
   render() {
@@ -10,7 +10,9 @@ class HeaderButton extends PureComponent {
       return (
         <div className="header-button disabled" onClick={this.handleClick}>
           {price && price.toFixed(1)}
-          <b>{count} {name}</b>
+          <b>
+            {count} {name}
+          </b>
         </div>
       );
     } else {
@@ -18,7 +20,9 @@ class HeaderButton extends PureComponent {
         <Link className="header-button-link" to={`/trade/${name}`}>
           <div className="header-button" onClick={this.handleClick}>
             {price && price.toFixed(1)}
-            <b>{count} {name}</b>
+            <b>
+              {count} {name}
+            </b>
           </div>
         </Link>
       );
@@ -27,7 +31,7 @@ class HeaderButton extends PureComponent {
 
   handleClick = () => {
     this.props.onChooseCurrency(this.props.name);
-  }
+  };
 }
 
 export default HeaderButton;

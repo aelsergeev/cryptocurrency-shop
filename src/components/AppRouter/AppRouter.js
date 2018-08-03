@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import './AppRouter.css';
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from 'react-router-dom';
 import PrivateRoute from '../PrivateRoute';
-import Main from "../Main";
-import Auth from "../Auth";
+import Main from '../Main';
+import Auth from '../Auth';
 
 export default class AppRouter extends PureComponent {
   render() {

@@ -13,14 +13,14 @@ import {
 export default handleActions(
   {
     [loginRequest.toString()]: state => ({ ...state, isAuthorized: false, loginError: null }),
-    [loginSuccess.toString()]: state => ({ ...state, isAuthorized: true, loginError: null }),
+    [loginSuccess.toString()]: state => ({ ...state, isAuthorized: true }),
     [loginFailure.toString()]: (state, action) => ({
       ...state,
       isAuthorized: false,
       loginError: action.payload.data.message
     }),
     [registrationRequest.toString()]: state => ({ ...state, isAuthorized: false, registrationError: null }),
-    [registrationSuccess.toString()]: state => ({ ...state, isAuthorized: true, registrationError: null }),
+    [registrationSuccess.toString()]: state => ({ ...state, isAuthorized: true }),
     [registrationFailure.toString()]: (
       state,
       {

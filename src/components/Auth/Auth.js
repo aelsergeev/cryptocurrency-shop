@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import './Auth.css';
 import logo from './image/Logo.svg';
-import { Redirect } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 
 const authField = {
   false: {
@@ -31,7 +31,7 @@ export default class Auth extends PureComponent {
     const error = auth ? loginError : registrationError;
 
     if (isAuthorized) {
-      return (<Redirect to="/trade/btc" />)
+      return <Redirect to="/trade/btc" />;
     }
 
     return (

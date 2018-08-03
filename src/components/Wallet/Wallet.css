@@ -1,36 +1,36 @@
 .wallet {
-    display: flex;
-    flex-direction: row;
-    width: 298px;
+  display: flex;
+  flex-direction: row;
+  width: 298px;
 }
 
 .wallet-input {
-    background-color: #414244;
-    border: 1px solid #000;
-    color: #ffffff;
-    border-radius: 4px;
-    padding: 6px 0;
-    flex: 1 1 150px;
-    margin: 5px 0;
+  background-color: #414244;
+  border: 1px solid #000;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 6px 0;
+  flex: 1 1 150px;
+  margin: 5px 0;
 }
 
 .wallet-digit {
-    width: 55%;
-    display: inline-block;
-    text-align: right;
+  width: 55%;
+  display: inline-block;
+  text-align: right;
 }
 
 .wallet-float {
-    color: #8a8a8a;
-    max-width: 78px;
-    display: inline-block;
-    vertical-align: bottom;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  color: #8a8a8a;
+  max-width: 78px;
+  display: inline-block;
+  vertical-align: bottom;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .wallet-name {
-    flex: 1 1;
-    text-align: left;
-    margin: 15px 0 0 15px;
+  flex: 1 1;
+  text-align: left;
+  margin: 15px 0 0 15px;
 }

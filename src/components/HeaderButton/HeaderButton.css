@@ -1,27 +1,27 @@
 .header-button {
-    display: flex;
-    flex-direction: column;
-    -webkit-box-align: center;
-    align-items: center;
-    text-align: center;
-    height: 80px;
-    -webkit-box-pack: center;
-    justify-content: center;
-    margin: 0 8px;
-    text-decoration: none;
-    cursor: pointer;
-    color: #aaa;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  text-align: center;
+  height: 80px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin: 0 8px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #aaa;
 }
 
 .header-button b {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .disabled {
-    cursor: auto;
-    color: white;
+  cursor: auto;
+  color: white;
 }
 
 .header-button-link {
-    text-decoration: none;
+  text-decoration: none;
 }

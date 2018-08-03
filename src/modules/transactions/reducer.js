@@ -3,7 +3,7 @@ import { fetchUserTransactionsFailure, fetchUserTransactionsRequest, fetchUserTr
 
 export default handleActions(
   {
-    [fetchUserTransactionsRequest.toString()]: state => ({ ...state, isLoading: true }),
+    [fetchUserTransactionsRequest.toString()]: state => ({ ...state, isLoading: true, error: null }),
     [fetchUserTransactionsSuccess.toString()]: (state, action) => ({
       ...state,
       isLoading: false,

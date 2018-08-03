@@ -1,10 +1,10 @@
-import React, { Fragment, PureComponent } from "react";
-import "./Main.css"
-import Wallet from "../Wallet";
-import Header from "../Header";
-import Section from "../Section";
-import Transactions from "../Transactions";
-import Graph from "../Graph";
+import React, { Fragment, PureComponent } from 'react';
+import './Main.css';
+import Wallet from '../Wallet';
+import Header from '../Header';
+import Section from '../Section';
+import Transactions from '../Transactions';
+import Graph from '../Graph';
 
 export default class Main extends PureComponent {
   render() {

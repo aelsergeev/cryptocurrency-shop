@@ -25,12 +25,12 @@ export default class Transactions extends PureComponent {
 
               return (
                 <tr key={id}>
-                  <td>{delta > 0 ? "Покупка" : "Продажа"}</td>
+                  <td>{delta > 0 ? 'Покупка' : 'Продажа'}</td>
                   <td>{moment(created_at).format('DD.MM.YYYY HH:mm')}</td>
                   <td className="transaction-left">{parseInt(delta, 10)}</td>
                   <td className="transaction-left">{usd_delta}</td>
                 </tr>
-              )
+              );
             })}
           </tbody>
         </table>

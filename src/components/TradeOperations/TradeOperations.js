@@ -2,7 +2,11 @@ import React, { PureComponent } from 'react';
 import { compose, mapProps } from 'recompose';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getCurrentCurrencyPurchase, getCurrentCurrencySell, getSelectedCurrency } from '../../modules/currency/selector';
+import {
+  getCurrentCurrencyPurchase,
+  getCurrentCurrencySell,
+  getSelectedCurrency
+} from '../../modules/currency/selector';
 import { buyCurrencyRequest, sellCurrencyRequest } from '../../modules/currency/actions';
 import styled from 'styled-components';
 import { getError } from '../../modules/wallet/selector';
